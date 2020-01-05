@@ -26,10 +26,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $questionnaires = auth()->user()->questionnaires;
+        return view('home', compact('questionnaires'));
     }
 
-    public function sendNotification() 
+    public function sendNotification()
     {
         $user = User::first();
 

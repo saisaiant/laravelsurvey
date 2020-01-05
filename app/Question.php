@@ -8,11 +8,18 @@ class Question extends Model
 {
     protected $guarded = [];
 
-    public function questionnaire() {
+    public function questionnaire()
+    {
         return $this->belongsTo(Questionnaire::class);
     }
 
-    public function answers() {
+    public function answers()
+    {
         return $this->hasMany(Answer::class);
+    }
+
+    public function responses()
+    {
+        return $this->hasMany(SurveyResponse::class);
     }
 }
